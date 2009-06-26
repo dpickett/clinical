@@ -1,0 +1,212 @@
+HTTP/1.1 200 OK
+Date: Fri, 26 Jun 2009 21:40:41 GMT
+Set-Cookie: CTOpts=6ihzm6CLRiFiQRcyCyUgzw-R98LyNR4i-CE; Path=/ct2/
+Expires: Fri, 26 Jun 2009 21:40:42 GMT
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 9221
+Set-Cookie: BIGipServerctgov-http-pool=189861506.22610.0000; path=/
+
+<?xml version="1.0" encoding="UTF-8"?>
+<search_results count="28928">
+  <query>( &quot;Recruiting&quot; OR &quot;Not yet recruiting&quot; OR &quot;Available&quot; ) [SUMMARY-STATUS]</query>
+  <clinical_study>
+    <order>1</order>
+    <score>0.9801</score>
+    <nct_id>NCT00004400</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00004400</url>
+    <title>Phase II Randomized Study of Physiologic Testosterone Replacement in Premenopausal, HIV-Positive Women</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>HIV Infections; Cachexia</condition_summary>
+    <last_changed>June 23, 2005</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>2</order>
+    <score>0.9801</score>
+    <nct_id>NCT00005100</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00005100</url>
+    <title>Measurement of Outcome of Surgical Treatment in Patients With Acromegaly</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Acromegaly</condition_summary>
+    <last_changed>June 23, 2005</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>3</order>
+    <score>0.9801</score>
+    <nct_id>NCT00011700</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00011700</url>
+    <title>Stachybotrys Induced Hemorrhage in the Developing Lung</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Idiopathic Pulmonary Hemorrhage</condition_summary>
+    <last_changed>December 1, 2006</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>4</order>
+    <score>0.9801</score>
+    <nct_id>NCT00041600</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00041600</url>
+    <title>Human Epilepsy Genetics--Neuronal Migration Disorders Study</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Epilepsy; Seizures; Cognition Disorders; Neuronal Migration Disorders</condition_summary>
+    <last_changed>February 3, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>5</order>
+    <score>0.9801</score>
+    <nct_id>NCT00044200</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00044200</url>
+    <title>Positron Emission Tomography (PET) to Study Brain Signaling</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Healthy</condition_summary>
+    <last_changed>June 9, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>6</order>
+    <score>0.9801</score>
+    <nct_id>NCT00050700</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00050700</url>
+    <title>Brain Imaging in Depression</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Depression; Bipolar Disorder</condition_summary>
+    <last_changed>June 9, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>7</order>
+    <score>0.9801</score>
+    <nct_id>NCT00062400</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00062400</url>
+    <title>Assessing Women's Attitudes About the Risk of Infertility Related to Adjuvant Therapy for Early Breast Cancer</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Breast Cancer; Psychosocial Effects/Treatment; Sexual Dysfunction and Infertility; Sexuality and Reproductive Issues</condition_summary>
+    <last_changed>June 16, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>8</order>
+    <score>0.9801</score>
+    <nct_id>NCT00083200</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00083200</url>
+    <title>Two Dose Levels of Capecitabine With Docetaxel in Treating Women With Locally Advanced or Metastatic Breast Cancer That Has Not Responded to Previous Anthracycline-Based Chemotherapy</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Breast Cancer</condition_summary>
+    <last_changed>February 26, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>9</order>
+    <score>0.9801</score>
+    <nct_id>NCT00096200</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00096200</url>
+    <title>Sorafenib With or Without Paclitaxel and Carboplatin in Treating Patients With Recurrent Ovarian Cancer, Primary Peritoneal Cancer, or Fallopian Tube Cancer</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Fallopian Tube Cancer; Ovarian Cancer; Peritoneal Cavity Cancer</condition_summary>
+    <last_changed>May 5, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>10</order>
+    <score>0.9801</score>
+    <nct_id>NCT00115700</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00115700</url>
+    <title>Radiotherapy Versus Radiotherapy Plus Chemotherapy in Early Stage Follicular Lymphoma</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Follicular Lymphoma</condition_summary>
+    <last_changed>May 6, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>11</order>
+    <score>0.9801</score>
+    <nct_id>NCT00124800</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00124800</url>
+    <title>The Effect of Tinnitus Retraining Therapy on Subjective and Objective Measures of Chronic Tinnitus</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Tinnitus</condition_summary>
+    <last_changed>February 10, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>12</order>
+    <score>0.9801</score>
+    <nct_id>NCT00136500</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00136500</url>
+    <title>Familial Amyotrophic Lateral Sclerosis (FALS) Study</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Amyotrophic Lateral Sclerosis</condition_summary>
+    <last_changed>February 16, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>13</order>
+    <score>0.9801</score>
+    <nct_id>NCT00135200</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00135200</url>
+    <title>Clinical Trial of Consolidation Treatment With Iodine I 131 Tositumomab for Multiple Myeloma</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Multiple Myeloma</condition_summary>
+    <last_changed>March 7, 2009</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>14</order>
+    <score>0.9801</score>
+    <nct_id>NCT00153400</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00153400</url>
+    <title>California WISEWOMAN Project</title>
+    <status open="Y">Not yet recruiting</status>
+    <condition_summary>Cardiovascular Diseases; Chronic Diseases</condition_summary>
+    <last_changed>February 10, 2006</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>15</order>
+    <score>0.9801</score>
+    <nct_id>NCT00157300</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00157300</url>
+    <title>PROTECT: Prospective Trial on Erythropoietin in Clinical Transplantation</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Patients Receiving a Kidney From a Non-Heart-Beating Donor</condition_summary>
+    <last_changed>September 19, 2007</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>16</order>
+    <score>0.9801</score>
+    <nct_id>NCT00162500</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00162500</url>
+    <title>A Novel Vaccine for the Treatment of MUC1-Expressing Tumor Malignancies</title>
+    <status open="Y">Not yet recruiting</status>
+    <condition_summary>Multiple Myeloma; Tumors</condition_summary>
+    <last_changed>January 9, 2007</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>17</order>
+    <score>0.9801</score>
+    <nct_id>NCT00172900</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00172900</url>
+    <title>MRS and DTI of White Matter in Alzheimer's Disease</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Alzheimer's Disease; Vascular Dementia</condition_summary>
+    <last_changed>December 20, 2005</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>18</order>
+    <score>0.9801</score>
+    <nct_id>NCT00167700</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00167700</url>
+    <title>The Effects of Maternal Nutrition During Pregnancy and Breast Feeding on the Risk of Allergic Disease in Child</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Atopic Eczema; Rhinitis; Asthma</condition_summary>
+    <last_changed>June 9, 2008</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>19</order>
+    <score>0.9801</score>
+    <nct_id>NCT00179400</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00179400</url>
+    <title>Insulin Action in Individuals With Type 2 Diabetes by Natural Fatty Acids or the Medication Pioglitazone</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Type 2 Diabetes Mellitus</condition_summary>
+    <last_changed>September 13, 2005</last_changed>
+  </clinical_study>
+  <clinical_study>
+    <order>20</order>
+    <score>0.9801</score>
+    <nct_id>NCT00182000</nct_id>
+    <url>http://ClinicalTrials.gov/show/NCT00182000</url>
+    <title>Effectiveness of D-Cycloserine as an Aid to Enhance Learning for Individuals With OCD Receiving Behavior Therapy</title>
+    <status open="Y">Recruiting</status>
+    <condition_summary>Obsessive-Compulsive Disorder</condition_summary>
+    <last_changed>September 7, 2007</last_changed>
+  </clinical_study>
+</search_results>

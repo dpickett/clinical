@@ -5,8 +5,8 @@ require "httparty"
 require "happymapper"
 
 require "clinical/extensions"
-require "clinical/element_parser"
 
+require "clinical/status"
 require "clinical/trial"
 
 require "clinical/collection"

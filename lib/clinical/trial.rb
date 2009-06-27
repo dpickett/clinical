@@ -9,14 +9,66 @@ module Clinical
     default_params :displayxml => true 
 
     tag "clinical_study"
-    element "nct_id", String
-    element "url", String    
-    element "title", String
-    element "condition_summary", String
-    element "last_changed", Date
-    element "status", Clinical::ElementParser, :parser => :parse_status
+    element :nct_id, String, :deep => true
+    element :read_status, Clinical::Status, :tag => "status", :parser => :parse
+    element :overall_status, Clinical::Status, :parser => :parse
+    element :url, String    
+    element :short_title, String, :tag => "title"
+    element :official_title, String
+    element :condition_summary, String
+    has_many :condition_items, String, :tag => "condition"
+    element :phase, String
+    element :study_type, String
+
+    element :lead_sponsor, String, :tag => "sponsors/lead_sponsor"
+    has_many :collaborators, String, :tag => "sponsors/collaborator"
+    has_many :agencies, String, :tag => "sponsors/agency"
+
+    has_many :intervention_types, String, :tag => "intervention_type", :deep => true
+    element :start_date, Date
+    element :last_changed_at, Date, :tag => "lastchanged_date"
+
+    element :minimum_age, String
+    element :maximum_age, String
+    element :gender, String
+    element :healthy_volunteers, String
+
+    element :url, String, :tag => "required_header/url"
+    element :eligibility_criteria, String, :tag => "eligibility/criteria/textblock"
+
+    element :brief_summary, String, :tag => "brief_summary/textblock"
+    element :detailed_description, String, :tag => "brief_summary/textblock"
+
+    def id
+      self.nct_id
+    end
+
+    def open?
+      self.status && self.status.open?
+    end
+
+    def sponsors
+      [lead_sponsor] + (collaborators || []) + (agencies || [])
+    end
+
+    def status
+      self.read_status || self.overall_status
+    end
+
+    def conditions
+      if condition_items.nil? || condition_items.empty?
+        condition_summary.split(";")
+      else
+        condition_items
+      end
+    end
 
     class << self
+      def find_by_id(id)
+        response = get("/show/#{id}")
+        parse(response.body)
+      end
+
       def find(*args)
         options = args.extract_options!
 
@@ -25,18 +77,38 @@ module Clinical
 
         query = query_hash_for(*[args, options])
         response = get("/search", :query => query)
-        Collection.create_from_results(options[:page], options[:per_page], response.body)
+        trials = Collection.create_from_results(options[:page], 
+          options[:per_page], 
+          response.body)
+
+        if options[:extended]
+          fetch_more_details(trials)
+        else
+          trials
+        end
       end
 
       def query_hash_for(*args)
         query = {}
         options = args.extract_options! || {}
-
         
         conditions = options[:conditions] || {}
         query["start"] = (options[:per_page] * options[:page]) - (options[:per_page] - 1)
-        query["recr"] = conditions[:recruiting] ? "open" : "closed" if conditions[:recruiting]
+        unless conditions[:recruiting].nil?
+          query["recr"] = conditions[:recruiting] ? "open" : "closed" 
+        end
         query["term"] = args.first if args.first.is_a?(String)
+        
+        {
+          :condition => "cond", 
+          :sponsor => "spons",
+          :intervention => "intr",
+          :outcome => "outc",
+          :sponsor => "spons"
+        }.each do |key,value|
+          query[value] = conditions[key] unless conditions[key].nil?
+        end
+
         query
       end
 
@@ -44,6 +116,13 @@ module Clinical
         last.is_a?(Hash) ? pop : { }
       end
       
+      private
+      def fetch_more_details(trials)
+        detailed_trials = trials.collect {|i| find_by_id(i.id)}
+        Collection.create(trials.current_page, trials.per_page, trials.count || 0) do |pager|
+          pager.replace(detailed_trials)
+        end
+      end
     end
   end
 end

@@ -3,31 +3,41 @@ Feature: As a potential participant for a clinical study
   So that I can find out more information about them
 
   Scenario: Find open studies
-    Given I am searching for trials where "recruiting" is "open"
+    Given I am searching for trials where "recruiting" is "true"
     When I perform the search
-    Then I should get trials with the "status" of "recruiting" or "not_yet_recruiting"
+    Then I should get trials that are "open"
 
   Scenario: Find closed studies
-    Given I am searching for trials where "recruiting" is not "open"
+    Given I am searching for trials where "recruiting" is "false"
     When I perform the search
-    Then I should get trials that are not open
+    Then I should get trials that are not "open"
 
   Scenario: Find a specific condition
-    Given I am searching for trials where "condition" is "cancer"
-    When I perform the search
-    Then I should get trials where the "condition" contains "cancer"
+    Given I am searching for trials where "condition" is "hemophelia"
+    When I perform the extended search
+    Then I should get trials where the "conditions" contains "hemophelia"
 
   Scenario: Find a specific intervention
     Given I am searching for trials where "intervention" is "drug"
-    When I perform the search
-    Then I should get trials where the "intervention" contains "drug"
+    When I perform the extended search
+    Then I should get trials where the "intervention_types" contains "drug"
 
   Scenario: Find a specific outcome
     Given I am searching for trials where "outcome" is "cardiac"
-    When I perform the search
-    Then I should get trials where the "outcome" contains "cardiac"
+    When I perform the extended search
+    Then I should get trials where the "outcomes" contains "cardiac"
 
   Scenario: Find a specific sponsor
     Given I am searching for trials where "sponsor" is "Eli Lilly"
-    When I perform the search
-    Then I should get trials where the "sponsor" contains "Eli Lilly"
+    When I perform the extended search
+    Then I should get trials where the "sponsors" contains "Eli Lilly"
+
+  Scenario: Find a specific trial
+    When I attempt to retrieve trial "NCT00001372"
+    Then I should get a trial
+    And the trial should have an "id" of "NCT0001372"
+
+  Scenario: Find a non-existant trial
+    When I attempt to retrive trial "4325785"
+    Then I should not get a trial
+    

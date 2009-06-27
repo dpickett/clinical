@@ -1,3 +1,11 @@
+HTTP/1.1 200 OK
+Date: Sat, 27 Jun 2009 19:11:20 GMT
+Set-Cookie: CTOpts=6ihzm6CLRiWguT0gEyUgzw-R98Ly0RGHhgE; Path=/ct2/
+Expires: Sat, 27 Jun 2009 19:11:21 GMT
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 7971
+Set-Cookie: BIGipServerctgov-http-pool=290524802.22610.0000; path=/
+
 <?xml version="1.0" encoding="UTF-8"?>
 <clinical_study>
   <required_header>

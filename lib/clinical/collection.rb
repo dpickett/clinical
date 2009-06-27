@@ -1,12 +1,15 @@
 module Clinical
   class Collection < WillPaginate::Collection
     include HappyMapper
+    attr_accessor :count
     class << self
       def create_from_results(page, per_page, body)
         results = SearchResult.parse(body)
-        create(page, per_page, results.count || 0) do |pager|
+        col = create(page, per_page, results.count || 0) do |pager|
           pager.replace(results.trials)
         end
+        col.count = results.count
+        col
       end
     end
     

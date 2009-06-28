@@ -7,6 +7,8 @@ require "happymapper"
 require "clinical/extensions"
 
 require "clinical/status"
+require "clinical/intervention"
+
 require "clinical/trial"
 
 require "clinical/collection"

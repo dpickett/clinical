@@ -24,7 +24,8 @@ module Clinical
     has_many :collaborators, String, :tag => "sponsors/collaborator"
     has_many :agencies, String, :tag => "sponsors/agency"
 
-    has_many :intervention_types, String, :tag => "intervention_type", :deep => true
+    #todo: need interventions objects
+    has_many :interventions, Intervention, :tag => "intervention"
     element :start_date, Date
     element :last_changed_at, Date, :tag => "lastchanged_date"
 

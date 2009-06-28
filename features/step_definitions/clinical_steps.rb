@@ -37,11 +37,12 @@ Then /^I should get trials where the "([^\"]*)" contains "([^\"]*)"$/ do |field,
     if result.is_a?(Array)
       found = false
       result.each do |i|
-        found = true if i =~ /#{value}/i
+        found = true if i.to_s =~ /#{value}/i
       end
       found.should be_true
     else
-      result.should =~ /#{value}/i
+      debugger if !(result =~ /#{value}/i)
+      result.to_s.should =~ /#{value}/i
     end
   end
 end

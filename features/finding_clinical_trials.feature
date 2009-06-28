@@ -20,7 +20,7 @@ Feature: As a potential participant for a clinical study
   Scenario: Find a specific intervention
     Given I am searching for trials where "intervention" is "drug"
     When I perform the extended search
-    Then I should get trials where the "intervention_types" contains "drug"
+    Then I should get trials where the "interventions" contains "drug"
 
   Scenario: Find a specific outcome
     Given I am searching for trials where "outcome" is "cardiac"

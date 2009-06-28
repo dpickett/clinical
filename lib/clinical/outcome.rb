@@ -2,6 +2,7 @@ module Clinical
   module Outcome
 
     def self.included(base)
+      base.send(:include, InstanceMethods)
       base.class_eval do
         include InstanceMethods
         include HappyMapper
@@ -20,6 +21,7 @@ module Clinical
         val = "#{measure}"
         val << ", TIME FRAME: #{time_frame}" if time_frame
         val << ",SAFETY ISSUE: #{safety_issue}" if safety_issue
+        val
       end
     end
     

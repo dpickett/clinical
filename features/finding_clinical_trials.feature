@@ -23,9 +23,9 @@ Feature: As a potential participant for a clinical study
     Then I should get trials where the "interventions" contains "drug"
 
   Scenario: Find a specific outcome
-    Given I am searching for trials where "outcome" is "decreased toxicity"
+    Given I am searching for trials where "outcome" is "toxic"
     When I perform the extended search
-    Then I should get trials where the "outcomes" contains "decreased toxicity"
+    Then I should get trials where the "outcomes" contains "toxic"
 
   Scenario: Find a specific sponsor
     Given I am searching for trials where "sponsor" is "Eli Lilly"
@@ -35,9 +35,9 @@ Feature: As a potential participant for a clinical study
   Scenario: Find a specific trial
     When I attempt to retrieve trial "NCT00001372"
     Then I should get a trial
-    And the trial should have an "id" of "NCT0001372"
+    And the trial should have an "id" of "NCT00001372"
 
   Scenario: Find a non-existant trial
-    When I attempt to retrive trial "4325785"
+    When I attempt to retrieve trial "4325785"
     Then I should not get a trial
     

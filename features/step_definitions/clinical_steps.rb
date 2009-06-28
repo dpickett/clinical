@@ -18,6 +18,10 @@ When /^I perform the extended search$/ do
   @trials = Clinical::Trial.find(:conditions => @params, :extended => true)
 end
 
+When /^I attempt to retrieve trial "([^\"]*)"$/ do |id|
+  @trial = Clinical::Trial.find_by_id(id)
+end
+
 Then /^I should get trials that are (not )?"([^\"]*)"$/ do |not_included, field|
   if not_included
     result = false
@@ -39,11 +43,23 @@ Then /^I should get trials where the "([^\"]*)" contains "([^\"]*)"$/ do |field,
       result.each do |i|
         found = true if i.to_s =~ /#{value}/i
       end
+      debugger if !found
       found.should be_true
     else
-      debugger if !(result =~ /#{value}/i)
       result.to_s.should =~ /#{value}/i
     end
   end
+end
+
+Then /^I should get a trial$/ do
+  @trial.should_not be_nil
+end
+
+Then /^the trial should have an "([^\"]*)" of "([^\"]*)"$/ do |field, value|
+  @trial.send(field).should eql(value)
+end
+
+Then /^I should not get a trial$/ do
+  @trial.should be_nil
 end
 

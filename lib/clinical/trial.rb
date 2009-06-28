@@ -73,7 +73,15 @@ module Clinical
     class << self
       def find_by_id(id)
         response = get("/show/#{id}")
-        parse(response.body)
+        if response.code == 400
+          nil
+        else
+          begin
+            parse(response.body)
+          rescue LibXML::XML::Error
+            return nil
+          end 
+        end
       end
 
       def find(*args)

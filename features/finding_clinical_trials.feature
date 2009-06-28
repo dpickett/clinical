@@ -23,9 +23,9 @@ Feature: As a potential participant for a clinical study
     Then I should get trials where the "interventions" contains "drug"
 
   Scenario: Find a specific outcome
-    Given I am searching for trials where "outcome" is "cardiac"
+    Given I am searching for trials where "outcome" is "decreased toxicity"
     When I perform the extended search
-    Then I should get trials where the "outcomes" contains "cardiac"
+    Then I should get trials where the "outcomes" contains "decreased toxicity"
 
   Scenario: Find a specific sponsor
     Given I am searching for trials where "sponsor" is "Eli Lilly"

@@ -24,8 +24,10 @@ module Clinical
     has_many :collaborators, String, :tag => "sponsors/collaborator"
     has_many :agencies, String, :tag => "sponsors/agency"
 
-    #todo: need interventions objects
     has_many :interventions, Intervention, :tag => "intervention"
+    has_many :primary_outcomes, PrimaryOutcome
+    has_many :secondary_outcomes, SecondaryOutcome
+
     element :start_date, Date
     element :last_changed_at, Date, :tag => "lastchanged_date"
 
@@ -49,7 +51,11 @@ module Clinical
     end
 
     def sponsors
-      [lead_sponsor] + (collaborators || []) + (agencies || [])
+      @sponsors ||= [lead_sponsor, (collaborators || []), (agencies || [])].flatten
+    end
+
+    def outcomes
+      @outcomes ||= [primary_outcomes, secondary_outcomes].flatten
     end
 
     def status

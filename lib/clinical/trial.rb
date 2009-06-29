@@ -71,7 +71,7 @@ module Clinical
 
     def conditions
       if condition_items.nil? || condition_items.empty?
-        condition_summary.split(";")
+        condition_summary.nil? ? nil : condition_summary.split(";")
       else
         condition_items
       end

@@ -17,8 +17,10 @@ module Clinical
     element :official_title, String
     element :condition_summary, String
     has_many :condition_items, String, :tag => "condition"
-    element :phase, String
+
+    element :phase, Integer
     element :study_type, String
+    element :study_design, String
 
     element :lead_sponsor, String, :tag => "sponsors/lead_sponsor"
     has_many :collaborators, String, :tag => "sponsors/collaborator"
@@ -28,13 +30,18 @@ module Clinical
     has_many :primary_outcomes, PrimaryOutcome
     has_many :secondary_outcomes, SecondaryOutcome
 
+    has_many :locations, Location, :tag => "location"
     element :start_date, Date
+    element :end_date, Date
+
     element :last_changed_at, Date, :tag => "lastchanged_date"
 
     element :minimum_age, String
     element :maximum_age, String
     element :gender, String
     element :healthy_volunteers, String
+
+    element :participant_quantity, Integer, :tag => "enrollment"
 
     element :url, String, :tag => "required_header/url"
     element :eligibility_criteria, String, :tag => "eligibility/criteria/textblock"

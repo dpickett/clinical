@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{clinical}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Pickett"]
-  s.date = %q{2009-06-26}
+  s.date = %q{2009-06-28}
   s.email = %q{dpickett@enlightsolutions.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -19,16 +19,21 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "clinical.gemspec",
      "features/finding_clinical_trials.feature",
      "features/step_definitions/clinical_steps.rb",
      "features/support/env.rb",
      "lib/clinical.rb",
      "lib/clinical/collection.rb",
-     "lib/clinical/element_parser.rb",
      "lib/clinical/extensions.rb",
+     "lib/clinical/intervention.rb",
+     "lib/clinical/outcome.rb",
+     "lib/clinical/primary_outcome.rb",
+     "lib/clinical/secondary_outcome.rb",
+     "lib/clinical/status.rb",
      "lib/clinical/trial.rb",
-     "lupus.xml",
      "test/clinical/trial_test.rb",
+     "test/fixtures/lupus_single.xml",
      "test/fixtures/open_set.xml",
      "test/test_helper.rb"
   ]

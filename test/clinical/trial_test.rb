@@ -22,22 +22,27 @@ class Clinical::TrialTest < Test::Unit::TestCase
     should "have a status" do
       assert_not_nil @trial.status
     end
-    
+
     should "indicate whether the trial is open" do
       assert_equal @trial.open?, @trial.status.open?
     end
+
+    should "have a location" do
+      assert_not_nil @trial.locations
+      assert !@trial.locations.empty?
+    end
+
+    should "have a start date" do
+      assert_not_nil @trial.start_date
+    end
+
+    should "have a location with an address" do
+      assert !@trial.locations[0].address.nil?
+    end
+
+    should "have a study type" do
+      assert_not_nil @trial.study_type
+    end
   end
 
-  context "extended searching" do
-    setup do
-    end
-
-    should "get a list of studies" do
-      @trials = Clinical::Trial.find("foo", :extended => true)
-    end
-
-    should "then get each studies details" do
-
-    end
-  end
 end

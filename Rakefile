@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'rake'
 
-begin require "metric_fu" rescue Exception; end
+begin require "metric_fu" rescue LoadError; end
 
 begin
   require 'jeweler'

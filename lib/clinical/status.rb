@@ -30,7 +30,7 @@ module Clinical
     end
 
     def to_s
-      sym.to_s
+      @name.to_s
     end
 
     class << self

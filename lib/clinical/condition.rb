@@ -11,7 +11,7 @@ module Clinical
       def parse(xml, options)
         xml.find("condition").collect do |n|
           item = new
-          item.name = n.content
+          item.name = n.content.chomp.strip
           item
         end
       end

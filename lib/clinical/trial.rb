@@ -20,9 +20,9 @@ module Clinical
     element :study_type, String
     element :study_design, String
 
-    element :lead_sponsor, String, :tag => "sponsors/lead_sponsor"
-    has_many :collaborators, String, :tag => "sponsors/collaborator"
-    has_many :agencies, String, :tag => "sponsors/agency"
+    has_one :lead_sponsor, Clinical::LeadSponsor
+    has_many :collaborators, Clinical::Collaborator
+    has_many :agencies, Clinical::Agency
 
     has_many :interventions, Intervention, :tag => "intervention"
     has_many :primary_outcomes, PrimaryOutcome

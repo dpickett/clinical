@@ -1,5 +1,3 @@
-require "ruby-debug"
-
 module Clinical
   class Trial
     include HappyMapper
@@ -16,9 +14,9 @@ module Clinical
     element :short_title, String, :tag => "title"
     element :official_title, String
     element :condition_summary, String
-    has_many :condition_items, String, :tag => "condition"
+    has_many :condition_items, Clinical::Condition, :tag => "condition", :raw => true
 
-    element :phase, Integer
+    element :text_phase, String, :tag => "phase"
     element :study_type, String
     element :study_design, String
 
@@ -36,10 +34,10 @@ module Clinical
 
     element :last_changed_at, Date, :tag => "lastchanged_date"
 
-    element :minimum_age, String
-    element :maximum_age, String
-    element :gender, String
-    element :healthy_volunteers, String
+    element :minimum_age, String, :tag => "eligibility/minimum_age"
+    element :maximum_age, String, :tag => "eligibility/maximum_age"
+    element :gender, String, :tag => "eligibility/gender"
+    element :healthy_volunteers, String, :tag => "eligibility/healthy_volunteers"
 
     element :participant_quantity, Integer, :tag => "enrollment"
 
@@ -75,6 +73,10 @@ module Clinical
       else
         condition_items
       end
+    end
+
+    def phase
+      self.text_phase.gsub(/phase /i, "").to_i
     end
 
     class << self

@@ -37,6 +37,14 @@ Feature: As a potential participant for a clinical study
     Then I should get a trial
     And the trial should have an "id" of "NCT00001372"
 
+  Scenario: Find a specific trial with extended attributes
+    When I attempt to retrieve trial "NCT00454363"
+    Then I should get a trial
+    And the trial should have a "phase" of "2"
+    And the trial should have "conditions" like "Lung Cancer"
+    And the trial should have a "minimum_age" of "21 Years"
+    And the trial should have "sponsors" like "M.D. Anderson"
+
   Scenario: Find a non-existant trial
     When I attempt to retrieve trial "4325785"
     Then I should not get a trial

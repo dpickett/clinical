@@ -11,6 +11,7 @@ require "clinical/intervention"
 require "clinical/outcome"
 require "clinical/primary_outcome"
 require "clinical/secondary_outcome"
+require "clinical/condition"
 
 require "clinical/address"
 require "clinical/contact"

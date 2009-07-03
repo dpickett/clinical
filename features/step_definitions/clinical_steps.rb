@@ -43,7 +43,6 @@ Then /^I should get trials where the "([^\"]*)" contains "([^\"]*)"$/ do |field,
       result.each do |i|
         found = true if i.to_s =~ /#{value}/i
       end
-      debugger if !found
       found.should be_true
     else
       result.to_s.should =~ /#{value}/i
@@ -55,9 +54,14 @@ Then /^I should get a trial$/ do
   @trial.should_not be_nil
 end
 
-Then /^the trial should have an "([^\"]*)" of "([^\"]*)"$/ do |field, value|
-  @trial.send(field).should eql(value)
+Then /^the trial should have an? "([^\"]*)" of "([^\"]*)"$/ do |field, value|
+  @trial.send(field).to_s.should eql(value)
 end
+
+Then /^the trial should have "([^\"]*)" like "([^\"]*)"$/ do |field, value|
+  @trial.send(field).to_s.should =~ /#{Regexp.escape(value)}/
+end
+
 
 Then /^I should not get a trial$/ do
   @trial.should be_nil

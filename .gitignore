@@ -3,3 +3,6 @@
 coverage
 rdoc
 pkg
+tmp
+features_rcov
+coverage.data

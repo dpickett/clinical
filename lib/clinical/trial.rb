@@ -47,6 +47,10 @@ module Clinical
     element :brief_summary, String, :tag => "brief_summary/textblock"
     element :detailed_description, String, :tag => "brief_summary/textblock"
 
+    attr_reader :keywords
+    attr_reader :categories
+    attr_reader :terms
+
     def id
       self.nct_id
     end
@@ -77,6 +81,31 @@ module Clinical
 
     def phase
       self.text_phase.gsub(/phase /i, "").to_i
+    end
+
+    #this metadata is not accessible in the feed so crawl the html page
+    #to get keywords, categories, and terms
+    def get_metadata
+      response = self.class.get("/show/#{id}", :query => {:displayxml => false})
+      html = Nokogiri::HTML(response.body)
+
+      metadata = {}
+
+      {
+        :terms => 0, 
+        :categories => 1,
+        :keywords => 2
+      }.each do |key, value|
+
+        metadata[key] = []
+        html.search("div.indent3:nth-last-child(#{value}) td").each do |td|
+          metadata[key] += td.inner_html.split(/\<br\>/).collect{|i| i.strip}
+        end
+
+      end
+
+      @terms, @categories, @keywords = metadata[:terms], metadata[:categories], metadata[:keywords]
+      metadata
     end
 
     class << self

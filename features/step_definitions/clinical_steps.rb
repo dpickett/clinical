@@ -22,6 +22,11 @@ When /^I attempt to retrieve trial "([^\"]*)"$/ do |id|
   @trial = Clinical::Trial.find_by_id(id)
 end
 
+When /^I attempt to retrieve keywords for trial "([^\"]*)"$/ do |id|
+  @trial = Clinical::Trial.find_by_id(id)
+  @trial.get_metadata
+end
+
 Then /^I should get trials that are (not )?"([^\"]*)"$/ do |not_included, field|
   if not_included
     result = false

@@ -3,6 +3,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require "will_paginate"
 require "httparty"
 require "happymapper"
+require "nokogiri"
 
 require "clinical/extensions"
 

@@ -49,3 +49,4 @@ Feature: As a potential participant for a clinical study
     When I attempt to retrieve trial "4325785"
     Then I should not get a trial
     
+

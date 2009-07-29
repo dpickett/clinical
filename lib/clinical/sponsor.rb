@@ -1,13 +1,13 @@
 module Clinical
   module Sponsor
-     def self.included(base)
-        base.class_eval do
-          attr_accessor :name
-          include HappyMapper
-        end
-        base.extend(ClassMethods)
-        base.send(:include, InstanceMethods)
+    def self.included(base)
+      base.class_eval do
+        attr_accessor :name
+        include HappyMapper
       end
+      base.extend(ClassMethods)
+      base.send(:include, InstanceMethods)
+    end
 
     module InstanceMethods
       def to_s

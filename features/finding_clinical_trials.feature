@@ -44,6 +44,7 @@ Feature: As a potential participant for a clinical study
     And the trial should have "conditions" like "Lung Cancer"
     And the trial should have a "minimum_age" of "21 Years"
     And the trial should have "sponsors" like "M.D. Anderson"
+    And the trial should have an "overall_official" like "Alexandra Phan, MD"
 
   Scenario: Find a non-existant trial
     When I attempt to retrieve trial "4325785"

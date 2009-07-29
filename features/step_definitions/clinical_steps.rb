@@ -63,7 +63,7 @@ Then /^the trial should have an? "([^\"]*)" of "([^\"]*)"$/ do |field, value|
   @trial.send(field).to_s.should eql(value)
 end
 
-Then /^the trial should have "([^\"]*)" like "([^\"]*)"$/ do |field, value|
+Then /^the trial should have (an\s)?"([^\"]*)" like "([^\"]*)"$/ do |an, field, value|
   @trial.send(field).to_s.should =~ /#{Regexp.escape(value)}/
 end
 

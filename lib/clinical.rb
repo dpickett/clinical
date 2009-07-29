@@ -20,8 +20,11 @@ require "clinical/lead_sponsor"
 require "clinical/agency"
 require "clinical/collaborator"
 
-require "clinical/address"
 require "clinical/contact"
+require "clinical/overall_official"
+require "clinical/location_contact"
+
+require "clinical/address"
 require "clinical/location"
 
 require "clinical/trial"

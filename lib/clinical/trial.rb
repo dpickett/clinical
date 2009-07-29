@@ -24,6 +24,8 @@ module Clinical
     has_many :collaborators, Clinical::Collaborator
     has_many :agencies, Clinical::Agency
 
+    has_one :overall_official, Clinical::OverallOfficial, :tag => "overall_official"
+
     has_many :interventions, Intervention, :tag => "intervention"
     has_many :primary_outcomes, PrimaryOutcome
     has_many :secondary_outcomes, SecondaryOutcome

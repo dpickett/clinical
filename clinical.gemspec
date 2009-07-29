@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{clinical}
-  s.version = "0.1.5"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Pickett"]
-  s.date = %q{2009-07-02}
+  s.date = %q{2009-07-28}
   s.email = %q{dpickett@enlightsolutions.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "clinical.gemspec",
      "features/finding_clinical_trials.feature",
+     "features/getting_keywords_and_categories.feature",
      "features/step_definitions/clinical_steps.rb",
      "features/support/env.rb",
      "lib/clinical.rb",
@@ -64,14 +65,17 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<jnunemaker-httparty>, [">= 0.4.3"])
       s.add_runtime_dependency(%q<jnunemaker-happymapper>, [">= 0.2.5"])
       s.add_runtime_dependency(%q<mislav-will_paginate>, [">= 2.3.11"])
+      s.add_runtime_dependency(%q<tenderlove-nokogiri>, ["> 1.3.3"])
     else
       s.add_dependency(%q<jnunemaker-httparty>, [">= 0.4.3"])
       s.add_dependency(%q<jnunemaker-happymapper>, [">= 0.2.5"])
       s.add_dependency(%q<mislav-will_paginate>, [">= 2.3.11"])
+      s.add_dependency(%q<tenderlove-nokogiri>, ["> 1.3.3"])
     end
   else
     s.add_dependency(%q<jnunemaker-httparty>, [">= 0.4.3"])
     s.add_dependency(%q<jnunemaker-happymapper>, [">= 0.2.5"])
     s.add_dependency(%q<mislav-will_paginate>, [">= 2.3.11"])
+    s.add_dependency(%q<tenderlove-nokogiri>, ["> 1.3.3"])
   end
 end

@@ -14,7 +14,7 @@ begin
     gem.add_dependency("jnunemaker-httparty", ">= 0.4.3")
     gem.add_dependency("jnunemaker-happymapper", ">= 0.2.5")
     gem.add_dependency("mislav-will_paginate", ">= 2.3.11")
-    gem.add_dependency("nokogiri", "> 1.3.3")
+    gem.add_dependency("nokogiri", ">= 1.3.3")
     
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

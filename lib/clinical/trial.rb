@@ -34,7 +34,8 @@ module Clinical
     element :start_date, Date
     element :end_date, Date
 
-    element :last_changed_at, Date, :tag => "lastchanged_date"
+    element :first_received_at, Date, :tag => "firstreceived_date"
+    element :updated_at, Date, :tag => "lastchanged_date"
 
     element :minimum_age, String, :tag => "eligibility/minimum_age"
     element :maximum_age, String, :tag => "eligibility/maximum_age"
@@ -162,6 +163,17 @@ module Clinical
           :sponsor => "spons"
         }.each do |key,value|
           query[value] = conditions[key] unless conditions[key].nil?
+        end
+
+        unless conditions[:updated_at].nil?
+          unless conditions[:updated_at].is_a?(Array)
+            conditions[:updated_at] = [conditions[:updated_at]] 
+          end
+
+          query["lup_s"] = conditions[:updated_at][0].strftime("%m/%d/%Y")
+          if conditions[:updated_at].size == 2
+            query["lup_e"] = conditions[:updated_at][1].strftime("%m/%d/%Y") 
+          end
         end
 
         query

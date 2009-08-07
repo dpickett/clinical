@@ -45,18 +45,6 @@ namespace :rcov do
     t.rcov_opts = %w{--aggregate coverage.data --exclude osx\/objc,gems\/,features\/,spec\/ -o "features_rcov"}
   end
 end
-begin
-  desc "Run both specs and features to generate aggregated coverage"
-  task :rcov do |t|
-    rm "coverage.data" if File.exist?("coverage.data")
-    Rake::Task["rcov:cucumber"].invoke
-    Rake::Task["rcov:tests"].invoke
-  end
-rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
-  end
-end
 
 begin
   require 'cucumber/rake/task'

@@ -10,6 +10,21 @@ Given /^I am searching for trials where "([^\"]*)" is "([^\"]*)"$/ do |field, va
   @params[field.to_sym] = value
 end
 
+Given /^I am searching for trials that have been updated between "([^\"]*)" and "([^\"]*)"$/ do |start_date, end_date|
+  dates = [Date.parse(start_date)]
+  dates << Date.parse(end_date)
+
+  @params ||= {}
+  @params[:updated_at] = dates
+end
+
+Given /^I am searching for trials that have been updated after "([^\"]*)"$/ do |date|
+  dates = [Date.parse(date)]
+
+  @params ||= {}
+  @params[:updated_at] = dates
+end
+
 When /^I perform the search$/ do
   @trials = Clinical::Trial.find(:conditions => @params)
 end
@@ -67,8 +82,30 @@ Then /^the trial should have (an\s)?"([^\"]*)" like "([^\"]*)"$/ do |an, field, 
   @trial.send(field).to_s.should =~ /#{Regexp.escape(value)}/
 end
 
+Then /^I should get trials where "([^\"]*)" is greater than "([^\"]*)"$/ do |arg1, arg2|
+  pending
+end
+
+Then /^I should get trials where "([^\"]*)" is greater than or equal to "([^\"]*)"$/ do |attr, date|
+  @trials.each do |t|
+    assert t.send(attr) >= Date.parse(date), 
+      "#{t.send(attr)} is not >= #{Date.parse(date)}"
+  end 
+end
+
+Then /^I should get trials where "([^\"]*)" is less than or equal to "([^\"]*)"$/ do |attr, date|
+  @trials.each do |t|
+    assert t.send(attr) <= Date.parse(date), 
+      "#{t.send(attr)} is not <= #{Date.parse(date)}"
+  end 
+end
+
 
 Then /^I should not get a trial$/ do
   @trial.should be_nil
 end
+
+
+Then /^I should get trials where "([^\"]*)" is between "([^\"]*)" and "([^\"]*)"$/ do |attr, start_date, end_date|
+  end
 

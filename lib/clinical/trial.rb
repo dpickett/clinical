@@ -37,8 +37,8 @@ module Clinical
     element :first_received_at, Date, :tag => "firstreceived_date"
     element :updated_at, Date, :tag => "lastchanged_date"
 
-    element :minimum_age, String, :tag => "eligibility/minimum_age"
-    element :maximum_age, String, :tag => "eligibility/maximum_age"
+    element :parsed_minimum_age, String, :tag => "eligibility/minimum_age"
+    element :parsed_maximum_age, String, :tag => "eligibility/maximum_age"
     element :gender, String, :tag => "eligibility/gender"
     element :healthy_volunteers, String, :tag => "eligibility/healthy_volunteers"
 
@@ -64,6 +64,14 @@ module Clinical
 
     def sponsors
       @sponsors ||= [lead_sponsor, (collaborators || []), (agencies || [])].flatten
+    end
+
+    def minimum_age
+      parsed_minimum_age == "N/A" ? nil : parsed_minimum_age
+    end
+
+    def maximum_age
+      parsed_maximum_age == "N/A" ? nil : parsed_maximum_age
     end
 
     def outcomes

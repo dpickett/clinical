@@ -45,6 +45,8 @@ Feature: As a potential participant for a clinical study
     And the trial should have a "minimum_age" of "21 Years"
     And the trial should have "sponsors" like "M.D. Anderson"
     And the trial should have an "overall_official" like "Alexandra Phan, MD"
+    And the trial should have "eligibility_criteria" like "DISEASE CHARACTERISTICS"
+    And the trial should have "brief_summary" like "Pazopanib"
 
   Scenario: Find trials that were updated between a range of dates
     Given I am searching for trials that have been updated between "07/06/2009" and "07/07/2009"

@@ -102,7 +102,7 @@ module Clinical
 
         metadata[key] = []
         html.search("div.indent3:nth-last-child(#{value}) td").each do |td|
-          word = td.inner_html.split(/\<br\>/).collect{|i| i.gsub(/\<div.*/, "").strip}
+          word = td.inner_html.split(/\<br\>/).collect{|i| i.gsub(/\<div.*/, "").strip.chomp}
           if word != ""
             metadata[key] += word
           end

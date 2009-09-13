@@ -109,3 +109,10 @@ end
 Then /^I should get trials where "([^\"]*)" is between "([^\"]*)" and "([^\"]*)"$/ do |attr, start_date, end_date|
   end
 
+Then /^the trial should have "([^\"]*)" with a "([^\"]*)"$/ do |col, attribute|
+  @trial.send(col).should_not be_empty
+  @trial.send(col).each do |i|
+    i.send(attribute).should_not be_nil
+  end
+end
+

@@ -2,6 +2,7 @@ module Clinical
   class Trial
     include HappyMapper
     include HTTParty
+    include Clinical::AbstractElement
 
     base_uri "http://clinicaltrials.gov"
     default_params :displayxml => true 
@@ -24,8 +25,8 @@ module Clinical
     has_many :collaborators, Clinical::Collaborator
     has_many :agencies, Clinical::Agency
 
-    has_one :overall_official, Clinical::OverallOfficial, :tag => "overall_official"
-    has_one :overall_contact, Clinical::OverallContact, :tag => "overall_contact"
+    abstract_element :overall_official, Clinical::Contact, :tag => "overall_official"
+    abstract_element :overall_contact, Clinical::Contact, :tag => "overall_contact"
 
     has_many :interventions, Intervention, :tag => "intervention"
     has_many :primary_outcomes, PrimaryOutcome
@@ -98,7 +99,7 @@ module Clinical
     #this metadata is not accessible in the feed so crawl the html page
     #to get keywords, categories, and terms
     def get_metadata
-      response = self.class.get("/show/#{id}", :query => {:displayxml => false})
+      response = self.class.get("/ct2/show/#{id}", :query => {:displayxml => false})
       html = Nokogiri::HTML(response.body)
 
       metadata = {}
@@ -124,7 +125,7 @@ module Clinical
 
     class << self
       def find_by_id(id)
-        response = get("/show/#{id}")
+        response = get("/ct2/show/#{id}")
         if response.code == 400
           nil
         else

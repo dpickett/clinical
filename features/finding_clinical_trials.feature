@@ -36,6 +36,7 @@ Feature: As a potential participant for a clinical study
     When I attempt to retrieve trial "NCT00001372"
     Then I should get a trial
     And the trial should have an "id" of "NCT00001372"
+    And the trial should have an "overall_contact"
 
   Scenario: Find a specific trial with extended attributes
     When I attempt to retrieve trial "NCT00454363"
@@ -47,7 +48,6 @@ Feature: As a potential participant for a clinical study
     And the trial should have an "overall_official" like "Alexandra Phan, MD"
     And the trial should have "eligibility_criteria" like "DISEASE CHARACTERISTICS"
     And the trial should have "brief_summary" like "Pazopanib"
-    And the trial should have an "overall_contact"
 
   Scenario: Find trials that were updated between a range of dates
     Given I am searching for trials that have been updated between "07/06/2009" and "07/07/2009"

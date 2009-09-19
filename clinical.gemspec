@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{clinical}
-  s.version = "0.2.9"
+  s.version = "0.2.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Pickett"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
      "features/step_definitions/clinical_steps.rb",
      "features/support/env.rb",
      "lib/clinical.rb",
+     "lib/clinical/abstract_element.rb",
      "lib/clinical/address.rb",
      "lib/clinical/agency.rb",
      "lib/clinical/collaborator.rb",
@@ -38,10 +39,7 @@ Gem::Specification.new do |s|
      "lib/clinical/intervention.rb",
      "lib/clinical/lead_sponsor.rb",
      "lib/clinical/location.rb",
-     "lib/clinical/location_contact.rb",
      "lib/clinical/outcome.rb",
-     "lib/clinical/overall_contact.rb",
-     "lib/clinical/overall_official.rb",
      "lib/clinical/primary_outcome.rb",
      "lib/clinical/secondary_outcome.rb",
      "lib/clinical/sponsor.rb",

@@ -74,6 +74,10 @@ Then /^I should get a trial$/ do
   @trial.should_not be_nil
 end
 
+Then /^the trial should have an? "([^\"]*)"$/ do |field|
+  @trial.send(field).should_not be_nil
+end
+
 Then /^the trial should have an? "([^\"]*)" of "([^\"]*)"$/ do |field, value|
   @trial.send(field).to_s.should eql(value)
 end

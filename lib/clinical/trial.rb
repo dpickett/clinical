@@ -25,6 +25,7 @@ module Clinical
     has_many :agencies, Clinical::Agency
 
     has_one :overall_official, Clinical::OverallOfficial, :tag => "overall_official"
+    has_one :overall_contact, Clinical::OverallContact, :tag => "overall_contact"
 
     has_many :interventions, Intervention, :tag => "intervention"
     has_many :primary_outcomes, PrimaryOutcome

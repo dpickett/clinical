@@ -2,6 +2,6 @@ module Clinical
   class OverallContact 
     include Clinical::Contact
 
-    tag "overall_official"
+    tag "overall_contact"
   end
 end

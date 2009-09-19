@@ -105,20 +105,19 @@ module Clinical
 
       {
         :terms => 0, 
-        :categories => 1,
-        :keywords => 2
+        :keywords => 1
       }.each do |key, value|
-
         metadata[key] = []
         html.search("div.indent3:nth-last-child(#{value}) td").each do |td|
-          word = td.inner_html.split(/\<br\>/).collect{|i| i.gsub(/\<div.*/, "").strip.chomp}
-          if word != ""
-            metadata[key] += word
+          words = td.inner_html.split(/\<br\/?\>/).collect{|i| i.gsub(/\<div.*/, "").strip.chomp}
+          if !words.empty?
+            metadata[key] += words
           end
+          metadata[key]
         end
 
       end
-
+ 
       @terms, @categories, @keywords = metadata[:terms], metadata[:categories], metadata[:keywords]
       metadata
     end

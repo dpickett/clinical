@@ -5,5 +5,4 @@ Feature: As a user of the clinical library
   Scenario: Get keywords, categories, and terms
     When I attempt to retrieve keywords for trial "NCT00001372"
     Then the trial should have "keywords" like "Autoimmunity"
-    And the trial should have "categories" like "Urologic Diseases"
     And the trial should have "terms" like "Connective Tissue Diseases"

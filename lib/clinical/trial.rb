@@ -166,7 +166,7 @@ module Clinical
           query["recr"] = conditions[:recruiting] ? "open" : "closed" 
         end
         query["term"] = args.first if args.first.is_a?(String)
-        
+        query["count"] = options[:per_page]
         {
           :condition => "cond", 
           :sponsor => "spons",
